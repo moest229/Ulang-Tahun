@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Masukkan Namamu</title>
+  <style>
+    body {
+      font-family: 'Comic Sans MS', cursive;
+      background: linear-gradient(to right, #ff9a9e, #fad0c4);
+      text-align: center;
+      padding: 50px;
+      color: #fff;
+    }
+
+    h1 {
+      font-size: 3em;
+      color: #fff;
+      text-shadow: 2px 2px #ff4081;
+    }
+
+    input {
+      padding: 10px;
+      font-size: 1.2em;
+      border-radius: 10px;
+      border: 2px solid #fff;
+      background-color: #fff;
+      color: #ff4081;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 1.2em;
+      background-color: #ff4081;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>🎂 Masukkan Namamu!</h1>
+  <input type="text" id="nameInput" placeholder="Nama kamu di sini..." />
+  <br>
+  <button onclick="goToSurprise()">Lihat Kejutan!</button>
+
+  <script>
+    function goToSurprise() {
+      const name = document.getElementById('nameInput').value.trim();
+      if (name === "") {
+        alert("Masukkan namamu dulu ya!");
+        return;
+      }
+      localStorage.setItem("birthdayName", name);
+      window.location.href = "surprise.html";
+    }
+  </script>
+</body>
+</html>
